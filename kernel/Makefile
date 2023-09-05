@@ -3,7 +3,7 @@ override MAKEFLAGS += -rR
 
 # This is the name that our final kernel executable will have.
 # Change as needed.
-override KERNEL := out/kernel.elf
+override KERNEL := ../out/kernel.elf
 
 # Convenience macro to reliably declare user overridable variables.
 define DEFAULT_VAR =
@@ -87,7 +87,7 @@ override NASMFLAGS += \
 override CFILES := $(shell find -L . -type f -name '*.c')
 override ASFILES := $(shell find -L . -type f -name '*.S')
 override NASMFILES := $(shell find -L . -type f -name '*.asm')
-OUT_DIR := out
+OUT_DIR := ../out
 override OBJ := $(addprefix $(OUT_DIR)/,$(CFILES:.c=.c.o) $(ASFILES:.S=.S.o) $(NASMFILES:.asm=.asm.o))
 override HEADER_DEPS := $(addprefix $(OUT_DIR)/,$(CFILES:.c=.c.d) $(ASFILES:.S=.S.d))
 

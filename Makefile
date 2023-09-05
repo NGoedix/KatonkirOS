@@ -54,7 +54,7 @@ kernel:
 $(IMAGE_NAME).iso: limine kernel
 	rm -rf iso_root
 	mkdir -p iso_root
-	cp -v kernel/out/kernel.elf \
+	cp -v out/kernel.elf \
 		limine.cfg limine/limine-bios.sys limine/limine-bios-cd.bin limine/limine-uefi-cd.bin iso_root/
 	mkdir -p iso_root/EFI/BOOT
 	cp -v limine/BOOTX64.EFI iso_root/EFI/BOOT/
